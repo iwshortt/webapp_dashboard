@@ -1,0 +1,425 @@
+/* ================================= 
+  Styles
+==================================== */
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+}
+
+/* ================================= 
+  Styles
+==================================== */
+.wrapper {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+    grid-template-areas: 
+        "header"
+        "nav"
+        "main"; 
+}
+main {
+    grid-area: main;
+}
+@media (min-width: 768px) {
+    .wrapper {
+        grid-template-columns: 55px 1fr;
+        grid-template-areas: 
+            "header header"
+            "nav main";    
+    }
+}
+
+main {
+    display: grid;
+}
+@media (min-width: 768px) {
+    main {
+        grid-template-columns: 50%;
+    }
+}
+
+@media (min-width: 768px) {
+    .traffic,
+    .social {
+        grid-column: 1 / span 2;        
+    }
+}
+
+@media (min-width: 768px) {
+    .daily,
+    .members,
+    .message {
+        grid-column: 1 / span 1
+    }
+}
+
+@media (min-width: 768px) {
+    .mobile-users,
+    .recent-activity,
+    .settings {
+        grid-column: 2 / span 1;
+    }    
+}
+
+.widget-container-full,
+.widget-container-half {
+    width: 95vw;
+    margin: 0 auto;
+}
+@media (min-width: 768px) {
+    .widget-container-full {
+        width: 90vw;
+    }
+    .widget-container-half {
+        width: 45vw;
+    }
+}
+
+/* ================================= 
+  Styles
+==================================== */
+.settings-input {
+    -webkit-appearance: none;
+    position: relative;
+    width: 50px;
+    height: 30px;
+    border-radius: 25px;
+    background-color: #ccc;
+    transition: background .3s;
+    outline: none;
+    cursor: pointer;
+}
+.settings-input::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    height: 1.25rem;
+    width: 1.25rem;
+    background-color: rgb(255, 255, 255);
+    transition: left .3s;
+}
+.settings-input:checked {
+    background-color: green;
+}
+.settings-input:checked::after {
+    left: 70%;
+}
+
+/* ================================= 
+  Styles
+==================================== */
+header {
+    grid-area: header;
+    display: flex;
+    align-items: center;
+    padding: 10px 5px;
+    background-color: rgb(111, 134, 220);
+}
+header h1 {
+    margin: 0 auto 0 0;
+}
+.bell {
+    min-width: 35px;
+    min-height: 35px;
+    position: relative;
+}
+.divider {
+    height: 100%;
+    border: 1px solid lightgray;
+    margin-left: 15px;
+}
+header .profile-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 0 15px;
+}
+header h3 {
+    margin: 0;
+}
+
+/* ================================= 
+  Styles
+==================================== */
+nav {
+    grid-area: nav;
+    background-color: rgb(68, 59, 96);
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+}
+nav img {
+    width: 60px;
+    height: 60px;
+}
+
+/* ================================= 
+  Styles
+==================================== */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+}
+.headline {
+    margin: 20px;    
+}
+.tab {
+    width: 75%;
+    height: auto;
+    background-color: lightgray;
+    border-left: 1px solid gray;
+    border-bottom: 1px solid gray;
+}
+
+/* ================================= 
+  Styles
+==================================== */
+.alert p {
+    margin: 0;
+}
+.alert-banner {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(111, 134, 220);
+    width: 95%;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 15px auto;
+    color: white;
+}
+
+/* ================================= 
+  Styles
+==================================== */
+.traffic ul {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    width: 75%;
+    margin: 0 auto 15px;
+    padding: 0;
+}
+
+/* ================================= 
+  Styles
+==================================== */
+.social-containers {
+    border-bottom: 1px solid gray;
+}
+.social-container {
+    display: flex;
+    background-color: lightgray;
+    border-radius: 5px;
+    border: 1px solid gray;
+    width: 90%;
+    margin: 15px auto;
+    padding: 20px;
+}
+.social-image {
+    width: 75px;
+    height: 75px;
+    margin-right: 20px;
+}
+
+/* ================================= 
+  Styles
+==================================== */
+.member,
+.member-recent-activity {
+    text-align: center;
+}
+.members .profile-image,
+.recent-activity .profile-image {
+    border-radius: 50%;
+    width: 85px;
+    height: 85px;
+}
+.member,
+.member-recent-activity {
+    border-bottom: 1px solid gray;
+}
+
+/* ================================= 
+  Styles
+==================================== */
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+form input,
+form textarea,
+form button {
+    width: 95%;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+form input {
+    padding: 10px;
+    height: 4rem;
+    background-color: lightgray;
+    border: 1px solid gray;
+}
+form textarea {
+    padding: 10px;
+    height: 12rem;
+    background-color: lightgray;
+    border: 1px solid gray;
+}
+form button {
+    padding: 10px;
+    height: 4rem;
+    background-color: rgb(111, 134, 220);
+    color: white;
+    border: 1px solid lightgray;
+    text-align: center;
+}
+
+/* ================================= 
+  Styles
+==================================== */
+.toggle {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: auto;
+}
+.toggle-email,
+.toggle-visibility {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 15px 0;
+}
+.toggle-email input,
+.toggle-visibility input {
+    margin: 0;
+}
+.settings {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    margin: 0 auto;
+}
+.settings select {
+    padding: 10px;
+    height: 4rem;
+    background-color: lightgray;
+    border: 1px solid gray;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+.settings button {
+    width: 50%;
+    height: 4rem;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    text-align: center;
+    color: white;
+    border: 1px solid lightgray;
+}
+.settings-button {
+    display: flex;
+}
+.settings .button-primary {
+    margin-right: 20px;
+    background-color: rgb(111, 134, 220);
+}
+.button-disabled {
+    background-color: gray;
+}
+
+/* ================================= 
+  media queries
+==================================== */
+@media (min-width: 768px) {
+    nav {
+        flex-direction: column;
+        justify-content: initial;       
+    }
+    nav img {
+        width: auto;
+        height: auto;
+    }
+    .main-header {
+        grid-column: 1 / span 2;
+        justify-content: space-between;
+    }
+    .alert {
+        grid-column: 1 / span 2;
+    }
+    .traffic-header {
+        display: flex;
+        align-items: center;
+    }
+    .traffic-header h3 {
+        margin-right: auto;
+    }
+    .traffic ul {
+        width: initial;
+        margin: 0;
+    }
+    .traffic ul li {
+        margin-right: 15px;
+    }
+    .traffic ul li:last-child {
+        margin-right: 0;
+    }
+    .daily {
+        border-top: 1px solid lightgray;
+        border-right: 1px solid lightgray;
+        border-bottom: 1px solid lightgray;
+    }
+    .mobile-users {
+        border-top: 1px solid lightgray;
+        border-bottom: 1px solid lightgray;
+    }
+    .social-containers {
+        grid-column: 1 / span 2;
+    }
+    .social-cont {
+        display: flex;
+    }
+    .members,
+    .recent-activity {
+        grid-column: 1 / span 2;
+    }
+    .member,
+    .member-recent-activity {
+        display: flex;
+        text-align: initial;
+    }
+    .member p {
+        margin-left: auto;
+    }
+    .member .profile-image,
+    .recent-activity .profile-image {
+        margin-right: 15px;
+    }
+    .message,
+    .settings {
+        grid-column: 1 / span 2;
+    }
+}
+@media (min-width: 1024px) {
+    .daily,
+    .members,
+    .message {
+        grid-column: 1 / span 1
+    }
+    .mobile-users,
+    .recent-activity,
+    .settings {
+        grid-column: 2 / span 1;
+    }
+    .members,
+    .message {
+        border-right: 1px solid gray;
+    }  
+}
