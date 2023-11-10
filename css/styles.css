@@ -3,10 +3,25 @@
 ==================================== */
 * {
   box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
+  font-weight: 300;
 }
 
 body {
   margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+h3 {
+  text-transform: uppercase;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(104, 105, 162);
 }
 
 /* ================================= 
@@ -115,17 +130,19 @@ header {
   grid-area: header;
   display: flex;
   align-items: center;
-  padding: 10px 5px;
-  background-color: rgb(111, 134, 220);
+  padding: 15px 10px;
+  background-color: rgb(104, 105, 162);
+  color: white;
 }
 
 header h1 {
   margin: 0 auto 0 0;
+  font-size: 1em;
 }
 
 .bell {
-  min-width: 35px;
-  min-height: 35px;
+  width: 25px;
+  height: 25px;
   position: relative;
 }
 
@@ -136,14 +153,16 @@ header h1 {
 }
 
 header .profile-image {
-  width: 50px;
-  height: 50px;
+  width: 25px;
+  height: 25px;
   border-radius: 50%;
   margin: 0 15px;
 }
 
 header h3 {
   margin: 0;
+  text-transform: initial;
+  font-size: 0.5em;
 }
 
 /* ================================= 
@@ -151,15 +170,16 @@ header h3 {
 ==================================== */
 nav {
   grid-area: nav;
-  background-color: rgb(68, 59, 96);
+  background-color: rgb(66, 66, 104);
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   padding: 15px;
 }
 
 nav img {
-  width: 60px;
-  height: 60px;
+  width: 40px;
+  height: 40px;
+  margin-right: 25px;
 }
 
 /* ================================= 
@@ -171,15 +191,15 @@ nav img {
 }
 
 .headline {
-  margin: 20px;
+  margin: 10px 15px;
 }
 
 .tab {
-  width: 75%;
+  width: 100%;
   height: auto;
-  background-color: lightgray;
-  border-left: 1px solid gray;
-  border-bottom: 1px solid gray;
+  background-color: #f3f5f4;
+  border-left: 1px solid #d2d2d2;
+  border-bottom: 1px solid #d2d2d2;
 }
 
 /* ================================= 
@@ -192,8 +212,8 @@ nav img {
 .alert-banner {
   display: flex;
   justify-content: space-between;
-  background-color: rgb(111, 134, 220);
-  width: 95%;
+  background-color: rgb(104, 105, 162);
+  width: 97%;
   padding: 15px;
   border-radius: 5px;
   margin: 15px auto;
@@ -203,6 +223,14 @@ nav img {
 /* ================================= 
   Styles
 ==================================== */
+.traffic {
+  padding-bottom: 20px;
+}
+
+.traffic h3 {
+  margin: 15px 0 10px 10px;
+}
+
 .traffic ul {
   display: flex;
   justify-content: space-between;
@@ -215,29 +243,79 @@ nav img {
 /* ================================= 
   Styles
 ==================================== */
+.daily {
+  border-top: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
+  padding-bottom: 20px;
+}
+
+.daily h3 {
+  margin: 15px 0 35px 10px;
+}
+
+/* ================================= 
+  Styles
+==================================== */
+.mobile-users {
+  border-bottom: 1px solid lightgray;
+}
+
+.mobile-users h3 {
+  margin: 15px 0 35px 10px;
+}
+
+#mobile-users-chart {
+  margin-bottom: 35px;
+}
+
+/* ================================= 
+  Styles
+==================================== */
 .social-containers {
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid lightgray;
+  padding: 0 15px 0 0;
+}
+
+.social-containers h3 {
+  margin: 15px 0 0 10px;
 }
 
 .social-container {
   display: flex;
-  background-color: lightgray;
+  align-items: center;
+  background-color: #f3f5f4;
   border-radius: 5px;
-  border: 1px solid gray;
-  width: 90%;
+  border: 1px solid #d2d2d2;
+  width: 98%;
+  height: 100px;
   margin: 15px auto;
+  margin-left: 10px;
   padding: 20px;
 }
 
+.social-container p:first-child {
+  color: rgb(104, 105, 162);
+}
+
+.social-container p:last-child {
+  font-size: 2.5em;
+  color: #949699;
+}
+
 .social-image {
-  width: 75px;
-  height: 75px;
+  width: 25px;
+  height: 25px;
   margin-right: 20px;
 }
 
 /* ================================= 
   Styles
 ==================================== */
+.members h3,
+.recent-activity h3 {
+  margin: 15px 0 15px 10px;
+}
+
 .member,
 .member-recent-activity {
   text-align: center;
@@ -246,18 +324,34 @@ nav img {
 .members .profile-image,
 .recent-activity .profile-image {
   border-radius: 50%;
-  width: 85px;
-  height: 85px;
+  width: 65px;
+  height: 65px;
 }
 
 .member,
 .member-recent-activity {
-  border-bottom: 1px solid gray;
+  margin: 0 15px;
+  padding: 15px 0;
+  border-bottom: 1px solid lightgray;
+}
+
+.member:last-child,
+.member-recent-activity:last-child {
+  margin: 0;
+  padding: 15px;
 }
 
 /* ================================= 
   Styles
 ==================================== */
+.message {
+  border-bottom: 1px solid lightgray;
+}
+
+.message h3 {
+  margin: 15px 0 15px 8px;
+}
+
 form {
   display: flex;
   flex-direction: column;
@@ -274,22 +368,22 @@ form button {
 
 form input {
   padding: 10px;
-  height: 4rem;
-  background-color: lightgray;
-  border: 1px solid gray;
+  height: 3.5rem;
+  background-color: #f3f5f4;
+  border: 1px solid #d2d2d2;
 }
 
 form textarea {
   padding: 10px;
-  height: 12rem;
-  background-color: lightgray;
-  border: 1px solid gray;
+  height: 10rem;
+  background-color: #f3f5f4;
+  border: 1px solid #d2d2d2;
 }
 
 form button {
   padding: 10px;
-  height: 4rem;
-  background-color: rgb(111, 134, 220);
+  height: 3.5rem;
+  background-color: rgb(104, 105, 162);
   color: white;
   border: 1px solid lightgray;
   text-align: center;
@@ -324,18 +418,22 @@ form button {
   margin: 0 auto;
 }
 
+.settings h3 {
+  margin: 15px 0;
+}
+
 .settings select {
   padding: 10px;
-  height: 4rem;
-  background-color: lightgray;
-  border: 1px solid gray;
+  height: 3.5rem;
+  background-color: #f3f5f4;
+  border: 1px solid #d2d2d2;
   border-radius: 5px;
   margin-bottom: 15px;
 }
 
 .settings button {
   width: 50%;
-  height: 4rem;
+  height: 3.5rem;
   margin-bottom: 15px;
   border-radius: 5px;
   text-align: center;
@@ -349,7 +447,7 @@ form button {
 
 .settings .button-primary {
   margin-right: 20px;
-  background-color: rgb(111, 134, 220);
+  background-color: rgb(104, 105, 162);
 }
 
 .button-disabled {
@@ -378,9 +476,11 @@ form button {
   .traffic-header {
     display: flex;
     align-items: center;
+    margin-bottom: 25px;
   }
   .traffic-header h3 {
     margin-right: auto;
+    margin-left: 15px;
   }
   .traffic ul {
     width: initial;
@@ -389,20 +489,35 @@ form button {
   .traffic ul li {
     margin-right: 15px;
   }
-  .traffic ul li:last-child {
-    margin-right: 0;
-  }
   .daily {
     border-top: 1px solid lightgray;
     border-right: 1px solid lightgray;
     border-bottom: 1px solid lightgray;
+    padding-bottom: 30px;
+  }
+  .daily h3 {
+    margin: 10px 15px 35px;
   }
   .mobile-users {
     border-top: 1px solid lightgray;
     border-bottom: 1px solid lightgray;
+    padding-bottom: 30px;
+  }
+  .mobile-users h3 {
+    margin: 10px 15px 35px;
+  }
+  #mobile-users-chart {
+    margin-bottom: 0;
   }
   .social-containers {
     grid-column: 1/span 2;
+  }
+  .social-container {
+    width: 90%;
+    margin-left: 15px;
+  }
+  .social-containers h3 {
+    margin: 15px 0 0 15px;
   }
   .social-cont {
     display: flex;
@@ -411,10 +526,17 @@ form button {
 .recent-activity {
     grid-column: 1/span 2;
   }
+  .members h3,
+.recent-activity h3 {
+    margin: 10px 0 0 15px;
+  }
   .member,
 .member-recent-activity {
     display: flex;
     text-align: initial;
+    align-items: center;
+    margin: 0 15px;
+    padding: 15px 0;
   }
   .member p {
     margin-left: auto;
@@ -422,6 +544,14 @@ form button {
   .member .profile-image,
 .recent-activity .profile-image {
     margin-right: 15px;
+  }
+  .member:last-child,
+.member-recent-activity:last-child {
+    margin: 0;
+    padding: 15px;
+  }
+  .message h3 {
+    margin: 15px 0 15px 15px;
   }
   .message,
 .settings {
@@ -441,7 +571,7 @@ form button {
   }
   .members,
 .message {
-    border-right: 1px solid gray;
+    border-right: 1px solid lightgray;
   }
 }
 
