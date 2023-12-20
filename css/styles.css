@@ -2,7 +2,9 @@
   Styles
 ==================================== */
 * {
-  box-sizing: border-box;
+  -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box; 
+  box-sizing: border-box; 
   font-family: "Nunito", sans-serif;
   font-weight: 300;
 }
@@ -180,6 +182,7 @@ nav img {
   width: 40px;
   height: 40px;
   margin-right: 25px;
+  filter: invert(100%);
 }
 
 /* ================================= 
@@ -218,6 +221,9 @@ nav img {
   border-radius: 5px;
   margin: 15px auto;
   color: white;
+}
+.alert-banner-close:hover {
+  cursor: pointer;
 }
 
 /* ================================= 
@@ -292,7 +298,9 @@ nav img {
   margin-left: 10px;
   padding: 20px;
 }
-
+.social-image svg {
+  fill: rgb(104, 105, 162);
+}
 .social-container p:first-child {
   color: rgb(104, 105, 162);
 }
@@ -461,10 +469,12 @@ form button {
   nav {
     flex-direction: column;
     justify-content: initial;
+    padding: 15px 7px;
   }
   nav img {
-    width: auto;
-    height: auto;
+    width: 40px;
+    height: 40px;
+    margin-bottom: 35px;
   }
   .main-header {
     grid-column: 1/span 2;
@@ -576,3 +586,86 @@ form button {
 }
 
 /*# sourceMappingURL=styles.css.map */
+
+/* ================================= 
+  Styles
+==================================== */
+.bell-svg{
+  fill: white;
+}
+.bell-svg:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+#notifications[data-visible=true] {
+  display: block;
+}
+#notifications {
+  display: none;
+  background-color: lightgray;
+  position: absolute;
+  top: 40px;
+  right: -20px;
+  width: 320px;
+  border-radius: 0 0 5px 5px;
+  z-index: 10;
+}
+.notifications-badge {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: limegreen;
+}
+#notifications-badge {
+  position: absolute;
+  top: 0;
+  left: 15px;
+  z-index: 10;
+}
+.notification .notifications-badge {
+  margin-right: 20px;
+}
+.notification {
+  display: flex;
+  align-items: center;
+  margin: 0 0 5px;
+  padding: 0 10px;
+  background-color: white;
+  color: black;
+}
+.close-icon {
+  margin-left: auto;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+.close-icon:hover {
+  color: white;
+  background-color: rgb(207, 35, 35);
+  cursor: pointer;
+}
+
+/* ================================= 
+  Styles
+==================================== */
+.traffic-header ul li {
+  padding: 10px 15px;
+}
+.traffic-header ul li:hover {
+  color: white;
+  background-color: rgb(104, 105, 162);
+  cursor: pointer;
+  border-radius: 20px;
+}
+.active {
+  background-color: limegreen;
+  border-radius: 20px;
+}
+
+/* ================================= 
+  Styles
+==================================== */
+.test-test {
+  width: 100%;
+}
