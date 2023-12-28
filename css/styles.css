@@ -311,8 +311,8 @@ nav img {
 }
 
 .social-image {
-  width: 25px;
-  height: 25px;
+  width: 75px;
+  height: 75px;
   margin-right: 20px;
 }
 
@@ -476,6 +476,11 @@ form button {
     height: 40px;
     margin-bottom: 35px;
   }
+  .nav-links {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+  }
   .main-header {
     grid-column: 1/span 2;
     justify-content: space-between;
@@ -548,7 +553,8 @@ form button {
     margin: 0 15px;
     padding: 15px 0;
   }
-  .member p {
+  .member p,
+  .member-recent-activity p {
     margin-left: auto;
   }
   .member .profile-image,
@@ -666,6 +672,22 @@ form button {
 /* ================================= 
   Styles
 ==================================== */
-.test-test {
-  width: 100%;
+.search-result {
+  display: none;
+  width: 95%;
+  margin: -15px 0 0;
+  padding: 0;
+  border-radius: 5px;
+}
+.search-result li{
+  list-style-type: none;
+  cursor: pointer;
+  margin: 10px 5px;
+  padding: 0 5px;
+  border-radius: 5px;
+  background: #f3f3f3;
+}
+.search-result li:hover{
+  background-color: rgb(104, 105, 162);
+  color: white;
 }

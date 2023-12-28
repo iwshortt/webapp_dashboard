@@ -5,13 +5,13 @@ const alertBanner = document.getElementById('alert');
 const trafficCanvas = document.getElementById('traffic-chart');
 const dailyCanvas = document.getElementById('daily-chart');
 const mobileCanvas = document.getElementById('mobile-users-chart');
-let user = document.getElementById('user-field');
 const message = document.getElementById('message-field');
 const send = document.getElementById('send');
 const notifications = document.getElementById('notifications');
 const trafficUl = document.querySelector('.traffic-header ul');
 const bellNotification = document.querySelector('.bell');
 const userField = document.getElementById('user-field');
+const searchBox = document.querySelector('.search-result');
 
 /* ================================= 
   bell notifications
@@ -40,8 +40,8 @@ bellNotification.addEventListener('click', (e) => {
 // alert banner
 alertBanner.innerHTML = `
     <div class="alert-banner">
-        <p><strong>Alert:</strong> You have <strong>6</strong> overdue tasks to complete</p>
-        <p class="alert-banner-close">x</p>    
+        <p><strong>Alert:</strong> You have <strong>3</strong> notifications!</p>
+        <p class="alert-banner-close">&times;</p>    
     </div>
 `;
 alertBanner.addEventListener('click', (e) => {
@@ -196,35 +196,76 @@ let mobileChart = new Chart(mobileCanvas, {
 /* ================================= 
   message field
 ==================================== */
-// search bar unable to complete at the time of submission
-// const members = [
-//     'Victoria Chambers',
-//     'Dale Byrd',
-//     'Dawn Wood',
-//     'Dan Oliver'
-// ];
-// function autoComplete() {
-//     let searchResult = document.querySelector('.search-result');
-//     let li = document.createElement('li');
-//     let userValue = user.value;
-//     for (let i = 0; i < members.length; i++) {
-//         if (members[i].toLowerCase().includes(userValue)) {
-//             console.log(members[i])
-//             li.innerHTML = members[i];
-//             searchResult.appendChild(li);
-//         }
-//     }
-// }
-
+// search bar
+const members = [
+    'Victoria Chambers',
+    'Dale Byrd',
+    'Dawn Wood',
+    'Dan Oliver'
+];
+userField.onkeyup = function() {
+    let results = [];
+    let input = userField.value;
+    if (input.length) {
+        searchBox.style.margin = '-15px 0 0';
+        results = members.filter( (member) => {
+            return member.toLowerCase().includes(input.toLowerCase());
+        });
+    } else {
+        searchBox.style.display = 'none';
+        searchBox.style.margin = '0';
+    }
+    displayResult(results);
+}
+function displayResult(results) {
+    const content = results.map((result) => {
+        return `<li onclick=select(this)>${result}</li>`;
+    });
+    searchBox.innerHTML = content.join('');
+    searchBox.style.display = 'block';
+}
+function select(member) {
+    userField.value = member.innerHTML;
+    searchBox.style.display = 'none';
+    searchBox.innerHTML = '';
+}
 // send button
 send.addEventListener('click', () => {
-    if (user.value === '' && message.value === '') {
+    if (userField.value === '' && message.value === '') {
         alert("Please fill out user and message fields before sending");        
-    } else if (user.value === '') {
+    } else if (userField.value === '') {
         alert("Please fill out user field before sending");
     } else if (message.value === '') {
         alert("Please fill out message field before sending");
     } else {
-        alert(`Message successfully sent to: ${user.value}`);
+        alert(`Message successfully sent to: ${userField.value}`);
     }
+});
+
+/* ================================= 
+  settings field
+==================================== */
+const emailNotifications = document.getElementById('email');
+const profilePrivacy = document.getElementById('profile-visibility');
+const timezone = document.getElementById('timezone');
+const save = document.getElementById('save');
+const cancel = document.getElementById('cancel');
+
+save.addEventListener('click', () => {
+    localStorage.setItem('email', emailNotifications.checked);
+    localStorage.setItem('privacy', profilePrivacy.checked);
+    localStorage.setItem('timezone', timezone.value);
+});
+
+function display() {
+    emailNotifications.checked = JSON.parse(localStorage.getItem('email'));
+    profilePrivacy.checked = JSON.parse(localStorage.getItem('privacy'));
+    timezone.value = localStorage.getItem('timezone');
+}
+display();
+
+cancel.addEventListener('click', () => {
+    localStorage.setItem('email', '');
+    localStorage.setItem('privacy', '');
+    localStorage.setItem('timezone', 'Eastern');
 });
